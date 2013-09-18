@@ -8,11 +8,10 @@ import ar.fiuba.tecnicas.giledrose.*;
 public class GiledRoseTest {
 
 	private Inventory inventory;
-//	private UpdatableItem[] items;
 	private Item[] items;
 
 	public GiledRoseTest() {
-		
+	
 	}
 	
 	@Before
@@ -23,7 +22,7 @@ public class GiledRoseTest {
 				new Item("Aged Brie", 2, 0),
 				new Item("Elixir of the Mongoose", 5, 7),
 				new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-				new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20),
+				new Item("Backstage passes to a TAFKAL80ETC concert", 12, 20),
 				new Item("Conjured Mana Cake", 3, 6)
 		};
 		inventory = new Inventory(items);
@@ -88,6 +87,22 @@ public class GiledRoseTest {
         int finalQuality = item.getQuality();
 
         assertEquals(finalQuality, initialQuality + 2);
+    }
+    
+    @Test
+    public void backstagePassesIncreasesQuality5Days() {
+    	Item item = items[4];
+        inventory.updateQuality();
+        inventory.updateQuality();
+        inventory.updateQuality();
+        inventory.updateQuality();
+        inventory.updateQuality();
+        inventory.updateQuality();
+        int initialQuality = item.getQuality();
+        inventory.updateQuality();
+        int finalQuality = item.getQuality();
+
+        assertEquals(finalQuality, initialQuality + 3);
     }
     
     @Test
