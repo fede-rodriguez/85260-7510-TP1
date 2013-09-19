@@ -1,11 +1,11 @@
-package ar.fiuba.tecnicas.giledrose;
+package main.java.ar.fiuba.tecnicas.giledrose;
 
 public class Inventory {
 	private UpdatableItem[] items;
 
     public Inventory(Item[] items) {
         super();
-        this.items = UpdatableItemArrayFactory.build(items);
+        this.items = UpdatableItemArrayFactory.buildArray(items);
     }
 
     public Inventory() {
@@ -18,7 +18,7 @@ public class Inventory {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
                 new Item("Conjured Mana Cake", 3, 6)
         };
-        this.items = UpdatableItemArrayFactory.build(plainItems);
+        this.items = UpdatableItemArrayFactory.buildArray(plainItems);
     }
 
     public void updateQuality() {

@@ -1,4 +1,4 @@
-package ar.fiuba.tecnicas.giledrose;
+package main.java.ar.fiuba.tecnicas.giledrose;
 
 public class Sulfuras extends UpdatableItem {
 	static int SULFURAS_MAX_QUALITY = 80;
@@ -25,6 +25,6 @@ public class Sulfuras extends UpdatableItem {
 
 	@Override
 	public void updateSellIn() {
-
+		item.setSellIn(item.getSellIn());
 	}
 }

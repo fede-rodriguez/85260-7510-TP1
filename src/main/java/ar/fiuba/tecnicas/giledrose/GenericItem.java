@@ -1,4 +1,4 @@
-package ar.fiuba.tecnicas.giledrose;
+package main.java.ar.fiuba.tecnicas.giledrose;
 
 public class GenericItem extends UpdatableItem {
 	static int GENERIC_NORMAL_DELTA = -1;
@@ -12,7 +12,7 @@ public class GenericItem extends UpdatableItem {
 
 	@Override
 	public void updateQuality() {
-		if (item.getSellIn() > 0)
+		if (!isExpired())
 			item.setQuality(item.getQuality() + GENERIC_NORMAL_DELTA);
 		else
 			item.setQuality(item.getQuality() + GENERIC_OVERDUE_DELTA);

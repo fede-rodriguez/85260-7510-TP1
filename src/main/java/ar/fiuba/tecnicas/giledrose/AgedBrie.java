@@ -1,4 +1,4 @@
-package ar.fiuba.tecnicas.giledrose;
+package main.java.ar.fiuba.tecnicas.giledrose;
 
 public class AgedBrie extends UpdatableItem {
 	static int AGED_BRIE_MAX_QUALITY = 50;

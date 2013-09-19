@@ -1,4 +1,4 @@
-package ar.fiuba.tecnicas.giledrose;
+package main.java.ar.fiuba.tecnicas.giledrose;
 
 public class Conjured extends UpdatableItem {
 	static int CONJURED_NORMAL_DELTA = -2;
@@ -12,7 +12,7 @@ public class Conjured extends UpdatableItem {
 
 	@Override
 	public void updateQuality() {
-		if (item.getSellIn() > 0)
+		if (!isExpired())
 			item.setQuality(item.getQuality() + CONJURED_NORMAL_DELTA);
 		else
 			item.setQuality(item.getQuality() + CONJURED_OVERDUE_DELTA);

@@ -1,32 +1,25 @@
-package ar.fiuba.tecnicas.giledrose;
+package main.java.ar.fiuba.tecnicas.giledrose;
 
 public class UpdatableItemArrayFactory {
 
 	public UpdatableItemArrayFactory() {
 	}
-	
-	public static UpdatableItem[] build (Item[] items) {
+
+	public static UpdatableItem[] buildArray (Item[] items) {
 		UpdatableItem[] newItemArray = new UpdatableItem[items.length];
-		
+
 		for (int i = 0; i < items.length; i++) {
 			Item item = items[i];
-			switch (item.getName()) {
-			case "Aged Brie":
+			if (item.getName() ==  "Aged Brie")
 				newItemArray[i] = new AgedBrie(item);
-				break;
-			case "Sulfuras, Hand of Ragnaros":
+			else if (item.getName() == "Sulfuras, Hand of Ragnaros")
 				newItemArray[i] = new Sulfuras(item);
-				break;
-			case "Backstage passes to a TAFKAL80ETC concert":
+			else if (item.getName() == "Backstage passes to a TAFKAL80ETC concert")
 				newItemArray[i] = new BackstagePasses(item);
-				break;
-			case "Conjured Mana Cake":
+			else if (item.getName() == "Conjured Mana Cake")
 				newItemArray[i] = new Conjured(item);
-				break;
-			default:
+			else
 				newItemArray[i] = new GenericItem(item);
-				break;
-			}
 		}
 		return newItemArray;
 	}

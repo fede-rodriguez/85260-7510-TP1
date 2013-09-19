@@ -1,4 +1,4 @@
-package ar.fiuba.tecnicas.giledrose;
+package main.java.ar.fiuba.tecnicas.giledrose;
 
 public abstract class UpdatableItem {
 	protected Item item;
@@ -21,9 +21,12 @@ public abstract class UpdatableItem {
 		item.setSellIn(item.getSellIn() - 1);
 	}
 	
+	protected boolean isExpired() {
+		return (item.getSellIn() <= 0);
+	}
+	
 	abstract protected int getMaxQuality();
 
 	abstract protected int getMinQuality();
 	
-
 }

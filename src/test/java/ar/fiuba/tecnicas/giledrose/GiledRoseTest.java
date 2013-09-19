@@ -1,9 +1,10 @@
-package test;
+package test.java.ar.fiuba.tecnicas.giledrose;
 
 import static org.junit.Assert.*;
+import main.java.ar.fiuba.tecnicas.giledrose.*;
+
 import org.junit.Before;
 import org.junit.Test;
-import ar.fiuba.tecnicas.giledrose.*;
 
 public class GiledRoseTest {
 
