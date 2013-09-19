@@ -24,7 +24,7 @@ public class GiledRoseTest {
 				new Item("Elixir of the Mongoose", 5, 7),
 				new Item("Sulfuras, Hand of Ragnaros", 0, 80),
 				new Item("Backstage passes to a TAFKAL80ETC concert", 12, 20),
-				new Item("Conjured Mana Cake", 3, 6)
+				new Item("Conjured Mana Cake", 3, 9)
 		};
 		inventory = new Inventory(items);
 	}
@@ -113,5 +113,16 @@ public class GiledRoseTest {
     	inventory.updateQuality();
     	
     	assertEquals(item.getQuality(), initialQuality - 2);
+    }
+    
+    @Test
+    public void conjuredDecreasesQualityAfterExpired() {
+    	Item item = items[5];
+    	inventory.updateQuality();
+    	inventory.updateQuality();
+    	int initialQuality = item.getQuality();
+    	inventory.updateQuality();
+    	
+    	assertEquals(item.getQuality(), initialQuality - 4);
     }
 }
